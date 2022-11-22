@@ -1,0 +1,36 @@
+.selectorTitle {
+  display: inline;
+}
+
+.selectorTitle button {
+  display: inline-block;
+  margin: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+
+.selectorTitle h2 {
+  display: inline-block;
+}
+
+.timeInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.timeInput input {
+  font-size: 50px;
+  width: 160px;
+  text-align: center;
+  padding: 20px;
+}
+
+.timeInput p {
+  font-size: 60px;
+  font-weight: 300;
+  margin: 0;
+  transform: rotate(90deg);
+}
