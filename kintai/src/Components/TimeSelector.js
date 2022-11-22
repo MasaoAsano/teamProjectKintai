@@ -6,6 +6,10 @@ import WorkStyleSelector from "./WorkstyleSelector";
 const TimeSelector = () => {
   return (
     <div>
+      <div>dummy</div>
+      <div>dummy</div>
+      <div>dummy</div>
+      <div>dummy</div>
       <SelectorTitle />
       <WorkStyleSelector />
       <TimeInput />

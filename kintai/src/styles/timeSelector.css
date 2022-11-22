@@ -37,25 +37,23 @@
 }
 
 .timeSelectionTable {
-  font-size: 100px;
+  width: 220px;
+  height: 770px;
+  font-size: 36px;
   position: absolute;
-  top: -150px;
+  top: -315px;
   left: 200px;
-  background-color: aqua;
 
-  display: inline-block;
   margin: 1.5em 0 1.5em 15px;
-  padding: 7px 10px;
   color: #555;
   background: #FFF;
   border: solid 3px #555;
-  box-sizing: border-box;
 }
 
 .timeSelectionTable:before {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: -24px;
   margin-top: -12px;
   border: 12px solid transparent;
@@ -66,10 +64,43 @@
 .timeSelectionTable:after {
   content: "";
   position: absolute;
-  top: 50%;
+  top: 40%;
   left: -30px;
   margin-top: -14px;
   border: 14px solid transparent;
   border-right: 14px solid #555;
   z-index: 1;
+}
+
+.scrollView {
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 220px;
+  height: 770px;
+
+  color: #555;
+  background: #FFF;
+}
+
+.scrollView div {
+  width: 70%;
+  text-align: center;
+}
+
+.scrollView div:hover {
+  background-color: aqua;
+  cursor: pointer;
+}
+
+hr {
+  width: 70%;
+  margin: 3px;
 }
