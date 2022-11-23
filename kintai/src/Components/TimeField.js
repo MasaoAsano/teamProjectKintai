@@ -3,7 +3,23 @@ import SelectorTitle from "./SelectorTitle";
 import TimeInput from "./TimeInput";
 import WorkStyleSelector from "./WorkstyleSelector";
 
-const TimeField = () => {
+const TimeField = ({ date, timesAndStyle }) => {
+  const startDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    timesAndStyle.startHour,
+    timesAndStyle.startMinute
+  );
+  const endDate = new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate(),
+    timesAndStyle.endHour,
+    timesAndStyle.endMinute
+  );
+
+
   return (
     <div className="timeField">
       <div>
@@ -12,8 +28,8 @@ const TimeField = () => {
         <div>dummy</div>
         <div>dummy</div>
         <SelectorTitle />
-        <WorkStyleSelector />
-        <TimeInput />
+        <WorkStyleSelector selected={timesAndStyle?.style} />
+        <TimeInput startDate={startDate} endDate={endDate} />
       </div>
     </div>
   );
