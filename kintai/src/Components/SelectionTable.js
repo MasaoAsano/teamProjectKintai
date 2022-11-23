@@ -1,12 +1,12 @@
 import { useEffect, useRef } from "react";
 
 /**
- * TimeSelectionTable 時刻選択肢一覧
+ * SelectionTable 時刻選択肢一覧
  * @param { Date } Object.defaultDate 一覧の中心に配置する時刻
  * @param { function } Object.setTime 時刻を設定する関数
  * @returns Reactコンポーネント
  */
-const TimeSelectionTable = ({ defaultDate, setTime }) => {
+const SelectionTable = ({ defaultDate, setTime }) => {
   const ref = useRef(null);
   const timeList = [];
   for (let hour = 6; hour < 24; hour++) {
@@ -40,7 +40,7 @@ const TimeSelectionTable = ({ defaultDate, setTime }) => {
   }, []);
 
   return (
-    <div className="timeSelectionTable" tabIndex={-1} >
+    <div className="selectionTable" tabIndex={-1} >
       <div className="scrollView">
         {timeList}
       </div>
@@ -48,4 +48,4 @@ const TimeSelectionTable = ({ defaultDate, setTime }) => {
   )
 };
 
-export default TimeSelectionTable;
+export default SelectionTable;

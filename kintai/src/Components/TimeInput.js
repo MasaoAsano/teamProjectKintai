@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import TimeSelectionTable from "./TimeSelectionTable";
+import SelectionTable from "./SelectionTable";
 
 const TimeInput = () => {
   const dummyDate = new Date()
@@ -47,12 +47,12 @@ const TimeInput = () => {
     <div className="timeInputField">
       <div className="timeInput" onFocus={()=>{ setFocusOnStart(true) }} onBlur={focusChanged(setFocusOnStart)}>
         <input type="text" placeholder="開始時刻" value={displayTimeStart} onChange={timeInputted} />
-        {focusOnStart ? <TimeSelectionTable defaultDate={startTime} setTime={setStartTime} /> : <></>}
+        {focusOnStart ? <SelectionTable defaultDate={startTime} setTime={setStartTime} /> : <></>}
       </div>
       <p>~</p>
       <div className="timeInput" onFocus={()=>{ setFocusOnEnd(true) }} onBlur={focusChanged(setFocusOnEnd)}>
         <input type="text" placeholder="終了時刻" value={displayTimeEnd} onChange={timeInputted} />
-        {focusOnEnd ? <TimeSelectionTable defaultDate={endTime} setTime={setEndTime}/> : <></>}
+        {focusOnEnd ? <SelectionTable defaultDate={endTime} setTime={setEndTime}/> : <></>}
       </div>
     </div>
   )

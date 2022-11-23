@@ -1,9 +1,9 @@
-import "../styles/timeSelector.css";
+import "../styles/timeField.css";
 import SelectorTitle from "./SelectorTitle";
 import TimeInput from "./TimeInput";
 import WorkStyleSelector from "./WorkstyleSelector";
 
-const TimeSelector = () => {
+const TimeField = () => {
   return (
     <div>
       <div>dummy</div>
@@ -17,4 +17,4 @@ const TimeSelector = () => {
   );
 };
 
-export default TimeSelector;
+export default TimeField;
