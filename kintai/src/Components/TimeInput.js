@@ -26,15 +26,21 @@ const TimeInput = ({ startDate, endDate }) => {
   }
 
   const setEnteredTime = (value, inStart) => {
-    const re = /^(0[0-9]|1[0-9]|2[0-3]):?(0[0-9]|[1-5][0-9])$/;
+    let re = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):?(0[0-9]|[1-5][0-9])$/;
     if (!re.test(value)) {
       setDisplayTimeStart(createDisplayTime(startTime));
       setDisplayTimeEnd(createDisplayTime(endTime));
       return;
     }
+    
+    re = /^[0-9]:?(0[0-9]|[1-5][0-9])$/;
+    let base = value;
+    if (re.test(value)) {
+      base = "0" + value;
+    }
 
-    const hour = value.slice(0, 2);
-    const minute = value.slice(-2);
+    const hour = base.slice(0, 2);
+    const minute = base.slice(-2);
     const enteredDate = new Date(
       startTime.getFullYear(),
       startTime.getMonth(),
