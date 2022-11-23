@@ -1,10 +1,20 @@
+.timeField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .selectorTitle {
-  display: inline;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .selectorTitle button {
   display: inline-block;
-  margin: 10px;
+  margin-right: 10px;
   aspect-ratio: 1/1;
   border-radius: 50%;
   font-weight: bolder;
@@ -12,10 +22,17 @@
 
 .selectorTitle h2 {
   display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.workstyleSelector {
+  margin-bottom: 18px;
 }
 
 /* time input */
 .timeInputField {
+  margin-left: 28px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -54,7 +71,7 @@
   border: solid 3px #555;
 }
 
-.timeSelectionTable:before {
+.selectionTable:before {
   content: "";
   position: absolute;
   top: 38%;
@@ -65,7 +82,7 @@
   z-index: 2;
 }
 
-.timeSelectionTable:after {
+.selectionTable:after {
   content: "";
   position: absolute;
   top: 38%;

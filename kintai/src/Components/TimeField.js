@@ -5,14 +5,16 @@ import WorkStyleSelector from "./WorkstyleSelector";
 
 const TimeField = () => {
   return (
-    <div>
-      <div>dummy</div>
-      <div>dummy</div>
-      <div>dummy</div>
-      <div>dummy</div>
-      <SelectorTitle />
-      <WorkStyleSelector />
-      <TimeInput />
+    <div className="timeField">
+      <div>
+        <div>dummy</div>
+        <div>dummy</div>
+        <div>dummy</div>
+        <div>dummy</div>
+        <SelectorTitle />
+        <WorkStyleSelector />
+        <TimeInput />
+      </div>
     </div>
   );
 };
