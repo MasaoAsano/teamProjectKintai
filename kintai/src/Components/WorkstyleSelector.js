@@ -1,10 +1,10 @@
 const WorkstyleSelector = () => {
   return (
-    <div className="workstyleSelector">
+    <div  className="workstyleSelector">
       {
         ["在社", "在宅"].map( style => <>
-          <input type="radio" id={style} name="workstyle" value={style} />
-          <label for={style}>{style}</label>
+          <input key={style} type="radio" id={style} name="workstyle" value={style} />
+          <label key={style + "label"} htmlFor={style}>{style}</label>
         </>)
       }
     </div>
