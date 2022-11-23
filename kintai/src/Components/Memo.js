@@ -6,9 +6,12 @@ const Memo = ({ memo,func }) => {
       type="text"
       onChange={(e) => {
         func=(e.target.value)
+        console.log('func',func);
+        console.log('memo',memo);
       }}
       />
-      <p>{memo}</p>
+      <p>memo{func}</p>
+      
     </div>
   )
 };

@@ -9,12 +9,12 @@ const Template = ({ currentTemplate, setCurrentTemplate, templateList }) => {
   
   return (
     <div className="">
-    <select onChange={(e) => {
-      let city = e.target.value;
-      console.log('city',city);
-      setCurrentTemplate(city ? city : null);
-      console.log('currentTemplate',currentTemplate);
-    }}>
+      <select onChange={(e) => {
+        let style = e.target.value;
+        console.log('style',style);
+        setCurrentTemplate(style ? style : null);
+        console.log('currentTemplate',currentTemplate);
+      }}>
       <option value="">（勤務テンプレート選択…）</option>
       {templateList.map(cityOption => <option key={cityOption.id} value={cityOption.id}>{cityOption.displayName}</option>)}
     </select>
