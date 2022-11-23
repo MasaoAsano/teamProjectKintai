@@ -1,4 +1,4 @@
-import "./Register.css";
+import "../styles/register.css"
 const Register = () => {
   return (
     <div className="register">
