@@ -4,8 +4,8 @@ const WorkstyleSelector = ({ selected }) => {
     <div  className="workstyleSelector">
       {
         ["在社", "在宅"].map( style => <>
-          <input key={style} type="radio" id={style} name={uniqueName} value={style} defaultChecked={style===selected} />
-          <label key={style + "label"} htmlFor={style}>{style}</label>
+          <input key={style} type="radio" id={style + uniqueName} name={uniqueName} value={style} defaultChecked={style===selected} />
+          <label key={style + "label"} htmlFor={style + uniqueName}>{style}</label>
         </>)
       }
     </div>

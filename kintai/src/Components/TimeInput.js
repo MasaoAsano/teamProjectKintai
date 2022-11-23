@@ -33,8 +33,8 @@ const TimeInput = ({ startDate, endDate }) => {
       return;
     }
     
-    re = /^[0-9]:?(0[0-9]|[1-5][0-9])$/;
     let base = value;
+    re = /^[0-9]:?(0[0-9]|[1-5][0-9])$/;
     if (re.test(value)) {
       base = "0" + value;
     }
