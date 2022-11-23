@@ -9,10 +9,15 @@ import { useEffect, useRef } from "react";
 const SelectionTable = ({ defaultDate, setTime }) => {
   const ref = useRef(null);
   const timeList = [];
+  let target = 2;
   for (let hour = 6; hour < 24; hour++) {
     for (let minute = 0; minute < 60; minute++) {
       const time = hour + ":" + String(minute).padStart(2, "0");
+      target++;
       if (hour === defaultDate.getHours() && minute === defaultDate.getMinutes()) {
+        target = 0;
+      }
+      if (target == 2) {
         timeList.push(<div key={time} ref={ref} onClick={timeClicked}>{time}</div>);
       } else {
         timeList.push(<div key={time} onClick={timeClicked}>{time}</div>);
