@@ -14,12 +14,23 @@
   display: inline-block;
 }
 
-.timeInput {
-  position: absolute;
+/* time input */
+.timeInputField {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+
+.timeInputField p {
+  font-size: 60px;
+  font-weight: 300;
+  margin: 0;
+  transform: rotate(90deg);
+}
+
+.timeInput {
+  position: relative;
 }
 
 .timeInput input {
@@ -29,19 +40,12 @@
   padding: 20px;
 }
 
-.timeInput p {
-  font-size: 60px;
-  font-weight: 300;
-  margin: 0;
-  transform: rotate(90deg);
-}
-
 .timeSelectionTable {
   width: 220px;
   height: 770px;
   font-size: 40px;
   position: absolute;
-  top: -315px;
+  top: -300px;
   left: 200px;
 
   margin: 1.5em 0 1.5em 15px;
@@ -53,7 +57,7 @@
 .timeSelectionTable:before {
   content: "";
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: -24px;
   margin-top: -12px;
   border: 12px solid transparent;
@@ -64,7 +68,7 @@
 .timeSelectionTable:after {
   content: "";
   position: absolute;
-  top: 40%;
+  top: 38%;
   left: -30px;
   margin-top: -14px;
   border: 14px solid transparent;

@@ -40,7 +40,7 @@ const TimeSelectionTable = ({ defaultDate, setTime }) => {
   }, []);
 
   return (
-    <div className="timeSelectionTable">
+    <div className="timeSelectionTable" tabIndex={-1} >
       <div className="scrollView">
         {timeList}
       </div>
