@@ -19,7 +19,6 @@ const TimeField = ({ date, timesAndStyle }) => {
     timesAndStyle.endMinute
   );
 
-
   return (
     <div className="timeField">
       <div>
@@ -28,7 +27,7 @@ const TimeField = ({ date, timesAndStyle }) => {
         <div>dummy</div>
         <div>dummy</div>
         <SelectorTitle />
-        <WorkStyleSelector selected={timesAndStyle?.style} />
+        <WorkStyleSelector selected={timesAndStyle.style} />
         <TimeInput startDate={startDate} endDate={endDate} />
       </div>
     </div>

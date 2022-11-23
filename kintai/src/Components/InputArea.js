@@ -26,7 +26,7 @@ const InputArea = (props) => {
     <div className="inputArea">
       <Title date={date} />
       <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} templateList={templateList}/>
-      <TimeField currentTimeList={currentTimeList}/>
+      {currentTimeList.map(timesAndStyle => <TimeField key={Math.random()} date={date} timesAndStyle={timesAndStyle} />)}
       <Memo memo={memo} func={setMemo} />
       <TimeComment />
       <Register />
