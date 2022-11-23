@@ -30,6 +30,10 @@
   margin-bottom: 18px;
 }
 
+.workstyleSelector label {
+  margin-right: 12px;
+}
+
 /* time input */
 .timeInputField {
   margin-left: 28px;
@@ -117,7 +121,8 @@
 }
 
 .scrollView div:hover {
-  background-color: aqua;
+  color: black;
+  background-color: rgb(195, 254, 254);
   cursor: pointer;
 }
 
