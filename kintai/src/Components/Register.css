@@ -1,0 +1,13 @@
+.register{
+    background-color: blue;
+    border-style: solid;
+    font-size: large;
+    border-width: 1px;
+    padding: 0px 10;
+    text-rendering: auto;
+    color: initial;
+    display: inline-block;
+    text-align: start;
+    margin: 0em;
+    font: 400 11px system-ui;
+}

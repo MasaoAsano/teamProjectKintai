@@ -9,13 +9,13 @@ import Title from "./Title";
 const InputArea = (props) => {
   const [date, setDate] = useState(new Date());
   const [currentTemplate, setCurrentTemplate] = useState("昨日と同じ");
-
+  const [memo, setMemo] = useState("メモ");
   return (
     <div className="inputArea">
       <Title date={date} />
       <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} />
       <TimeField />
-      <Memo />
+      <Memo memo={memo} func={setMemo} />
       <TimeComment />
       <Register />
     </div>
