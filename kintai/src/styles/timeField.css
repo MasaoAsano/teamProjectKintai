@@ -57,8 +57,13 @@
 .timeInput input {
   font-size: 50px;
   width: 160px;
+  height: 55px;
   text-align: center;
   padding: 20px;
+}
+
+.timeInput input:placeholder-shown {
+  font-size: 30px;
 }
 
 .selectionTable {
