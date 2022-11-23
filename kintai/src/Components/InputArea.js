@@ -3,7 +3,7 @@ import Memo from "./Memo";
 import Register from "./Register";
 import Template from "./Template";
 import TimeComment from "./TimeComment";
-import TimeSelector from "./TimeSelector";
+import TimeField from "./TimeField";
 import Title from "./Title";
 
 const InputArea = (props) => {
@@ -14,7 +14,7 @@ const InputArea = (props) => {
     <div className="inputArea">
       <Title date={date} />
       <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} />
-      <TimeSelector />
+      <TimeField />
       <Memo memo={memo} func={setMemo} />
       <TimeComment />
       <Register />
