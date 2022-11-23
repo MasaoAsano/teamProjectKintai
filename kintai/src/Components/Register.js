@@ -1,6 +1,9 @@
+import "./Register.css";
 const Register = () => {
   return (
-    <div></div>
+    <div className="register">
+      <button>登録</button>
+    </div>
   )
 };
 
