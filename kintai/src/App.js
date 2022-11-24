@@ -7,17 +7,17 @@ function App() {
   const workResults = [
     {
       date: "20221107",
-      workingTime: 9,
+      workingTime: 2,
       approved: true,
     },
     {
       date: "20221108",
-      workingTime: 8,
+      workingTime: 3,
       approved: true,
     },
     {
       date: "20221109",
-      workingTime: 13,
+      workingTime: 4,
       approved: false,
     },
   ];
