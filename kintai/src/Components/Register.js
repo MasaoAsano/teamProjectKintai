@@ -1,4 +1,4 @@
-import "../styles/register.css"
+// import "../styles/register.css"
 const Register = ({ setRegister }) => {
 
   const buttonClicked = () => {
