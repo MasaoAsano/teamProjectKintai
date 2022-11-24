@@ -5,10 +5,10 @@ import React, { useEffect, useState } from "react";
 import kintaiList from "./InitialData";
 
 const templateList = [
-  { id: "A", displayName: "在宅" ,timeList:[{startHour:8, startMinute:0, endHour:17, endMinute:0, style:"在宅"}]},
-  { id: "B", displayName: "在社" ,timeList:[{startHour:8, startMinute:30, endHour:17, endMinute:30, style:"在社"}]},
-  { id: "C", displayName: "在社→在宅" ,timeList:[{startHour:8, startMinute:0, endHour:12, endMinute:0, style:"在社"},{startHour:13, startMinute:0, endHour:17, endMinute:0, style:"在宅"}]},
-  { id: "D", displayName: "出張" ,timeList:[{startHour:9, startMinute:0, endHour:18, endMinute:0, style:"在社"}]},
+  { id: "A", displayName: "在宅" ,timeList:[{startHour:8, startMinute:0, endHour:18, endMinute:0, style:"在宅"}]},
+  { id: "B", displayName: "在社" ,timeList:[{startHour:8, startMinute:30, endHour:19, endMinute:30, style:"在社"}]},
+  { id: "C", displayName: "在社→在宅" ,timeList:[{startHour:8, startMinute:30, endHour:14, endMinute:0, style:"在社"},{startHour:15, startMinute:0, endHour:19, endMinute:0, style:"在宅"}]},
+  { id: "D", displayName: "在宅→在社" ,timeList:[{startHour:7, startMinute:30, endHour:10, endMinute:0, style:"在宅"},{startHour:11, startMinute:0, endHour:19, endMinute:0, style:"在社"}]},
 ];
 
 function App() {
