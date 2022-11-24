@@ -7,6 +7,7 @@ const TimeInput = ({ dateList, setDateList, index }) => {
   const [displayTimeEnd, setDisplayTimeEnd] = useState(createDisplayTime(dateList[index].endDate));
   const [focusOnStart, setFocusOnStart] = useState(false);
   const [focusOnEnd, setFocusOnEnd] = useState(false);
+  const [interval, setInterval] = useState(10);
 
   const timeInputted = (e) => {
     if (e.target.placeholder === "開始時刻") {
@@ -93,7 +94,16 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           onChange={timeInputted}
           onKeyDown={onKeyDown(true)}
         />
-        {focusOnStart ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="startDate" /> : <></>}
+        {focusOnStart ? 
+          <SelectionTable
+            dateList={dateList}
+            setDateList={setDateList}
+            index={index}
+            type="startDate"
+            interval={interval}
+            setInterval={setInterval}
+          /> : <></>
+        }
       </div>
       <p>~</p>
       <div className="timeInput" onFocus={()=>{ setFocusOnEnd(true) }} onBlur={focusChanged(false)}>
@@ -104,7 +114,15 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           onChange={timeInputted} 
           onKeyDown={onKeyDown(false)}
           />
-        {focusOnEnd ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="endDate" /> : <></>}
+        {focusOnEnd ?
+          <SelectionTable
+            dateList={dateList}
+            setDateList={setDateList}
+            index={index}
+            type="endDate"
+            interval={interval}
+            setInterval={setInterval}
+          /> : <></>}
       </div>
     </div>
   )

@@ -115,7 +115,7 @@
   left: 0;
 
   width: 220px;
-  height: 770px;
+  height: 720px;
 
   color: #555;
   background: #FFF;
@@ -130,6 +130,23 @@
   color: black;
   background-color: rgb(195, 254, 254);
   cursor: pointer;
+}
+
+.unit {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  font-size: large;
+  font-weight: bolder;
+  background-color: #FFF;
+}
+
+.unit div {
+  border-radius: 2px;
+  border-color: lightgray;
+  border-width: 1px;
 }
 
 hr {
