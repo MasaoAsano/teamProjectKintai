@@ -1,19 +1,14 @@
-const Memo = ({ memo,func }) => {
+const Memo = ({ note, setNote }) => {
   return (
     <div>
-      <p>メモ欄</p>
       <input
-      type="text"
-      onChange={(e) => {
-        func=(e.target.value)
-        console.log('func',func);
-        console.log('memo',memo);
-      }}
+        type="text"
+        placeholder="メモを入力"
+        defaultValue={note}
+        onChange={(e) => { setNote(e.currentTarget.value) }}
       />
-      <p>memo{func}</p>
-      
     </div>
-  )
+  );
 };
 
 export default Memo;

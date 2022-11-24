@@ -1,8 +1,13 @@
 import "../styles/register.css"
-const Register = () => {
+const Register = ({ setKintaiList, date, timeList, note }) => {
+
+  const buttonClicked = () => {
+    console.log(date, timeList, note);
+  };
+
   return (
     <div className="register">
-      <button>登録</button>
+      <button onClick={buttonClicked}>登録</button>
     </div>
   )
 };
