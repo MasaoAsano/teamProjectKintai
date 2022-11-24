@@ -37,6 +37,7 @@ function App() {
   const [templateID, setTemplateID] = useState("A");
   const [dateList, setDateList] = useState(convertToDateList(templateList[0].timeList, initialDate));
   const [register, setRegister] = useState(false);
+  const [note, setNote] = useState("");
 
   useEffect(() => {
     const currentTemplate = templateList.find(template => template.id === templateID);
@@ -47,9 +48,11 @@ function App() {
     const kintai = kintaiList.find(kintai => kintai.date.getFullYear() === selectedDate.getFullYear() && kintai.date.getMonth() == selectedDate.getMonth() && kintai.date.getDate() === selectedDate.getDate());
     if (kintai) {
       setDateList(kintai.timeRecords);
+      setNote(kintai.note);
     } else {
       const currentTemplate = templateList.find(template => template.id === templateID);
       setDateList(convertToDateList(currentTemplate.timeList, selectedDate));
+      setNote("");
     }
   }, [selectedDate]);
 
@@ -61,7 +64,7 @@ function App() {
     const newKintai = {
       date: selectedDate,
       timeRecords: dateList,
-      note: "aiueo",
+      note: note,
       approved: false
     }
     if (target < 0) {
@@ -87,6 +90,8 @@ function App() {
         templateID={templateID}
         setTemplateID={setTemplateID}
         templateList={templateList}
+        note={note}
+        setNote={setNote}
         setRegister={setRegister}
       />
     </div>

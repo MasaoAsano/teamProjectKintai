@@ -9,7 +9,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -21,7 +21,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -33,7 +33,7 @@ const kintaiList = [
         style: "在社"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -45,7 +45,7 @@ const kintaiList = [
         style: "在社"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -57,7 +57,7 @@ const kintaiList = [
         style: "在社"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -69,7 +69,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -86,7 +86,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -98,7 +98,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -115,7 +115,7 @@ const kintaiList = [
         style: "在社"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -137,7 +137,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -149,7 +149,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -166,7 +166,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: true
   },
   {
@@ -178,7 +178,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: false
   },
   {
@@ -190,7 +190,7 @@ const kintaiList = [
         style: "在宅"
       },
     ],
-    note: "aiueo",
+    note: "",
     approved: false
   },
 ];

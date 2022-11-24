@@ -6,8 +6,8 @@ import TimeComment from "./TimeComment";
 import TimeField from "./TimeField";
 import Title from "./Title";
 
-const InputArea = ({ date, dateList, setDateList, templateID, setTemplateID, templateList, setRegister }) => {
-  const [note, setNote] = useState("");
+const InputArea = (props) => {
+  const { date, dateList, setDateList, templateID, setTemplateID, templateList, note, setNote, setRegister } = props;
 
   return (
     <div className="inputArea">
@@ -24,7 +24,7 @@ const InputArea = ({ date, dateList, setDateList, templateID, setTemplateID, tem
           index={index}
         />)
       }
-      <Memo note={note} setNote={setNote} />
+      <Memo note={note} setNote={setNote} dateList={dateList} />
       <TimeComment
         dateList={dateList}
       />
