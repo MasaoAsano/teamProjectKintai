@@ -1,21 +1,12 @@
 import { useEffect, useState } from "react";
 import SelectionTable from "./SelectionTable";
 
-// const TimeInput = ({ startDate, setStartDate, endDate, setEndDate }) => {
 const TimeInput = ({ dateList, setDateList, index }) => {
   const createDisplayTime = (date) => date.getHours() + ":" + String(date.getMinutes()).padStart(2, "0");
   const [displayTimeStart, setDisplayTimeStart] = useState(createDisplayTime(dateList[index].startDate));
   const [displayTimeEnd, setDisplayTimeEnd] = useState(createDisplayTime(dateList[index].endDate));
   const [focusOnStart, setFocusOnStart] = useState(false);
   const [focusOnEnd, setFocusOnEnd] = useState(false);
-
-  // useEffect(() => {
-  //   setDisplayTimeStart(createDisplayTime(startDate));
-  // }, [startDate])
-
-  // useEffect(() => {
-  //   setDisplayTimeEnd(createDisplayTime(endDate));
-  // }, [endDate])
 
   const timeInputted = (e) => {
     if (e.target.placeholder === "開始時刻") {
@@ -57,14 +48,12 @@ const TimeInput = ({ dateList, setDateList, index }) => {
         endDate: dateList[index].endDate,
         style: dateList[index].style
       };
-      //      setStartDate(enteredDate);
     } else {
       newDate = {
         startDate: dateList[index].startDate,
         endDate: enteredDate,
         style: dateList[index].style
       };
-//      setEndDate(enteredDate);
     }
     const newList = dateList.slice();
     newList.splice(index, 1, newDate);
@@ -105,7 +94,6 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           onKeyDown={onKeyDown(true)}
         />
         {focusOnStart ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="startDate" /> : <></>}
-        {/* {focusOnStart ? <SelectionTable defaultDate={startDate} setTime={setStartDate} /> : <></>} */}
       </div>
       <p>~</p>
       <div className="timeInput" onFocus={()=>{ setFocusOnEnd(true) }} onBlur={focusChanged(false)}>
@@ -117,7 +105,6 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           onKeyDown={onKeyDown(false)}
           />
         {focusOnEnd ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="endDate" /> : <></>}
-        {/* {focusOnEnd ? <SelectionTable defaultDate={endDate} setTime={setEndDate}/> : <></>} */}
       </div>
     </div>
   )

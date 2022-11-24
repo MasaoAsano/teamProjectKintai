@@ -6,49 +6,15 @@ import TimeComment from "./TimeComment";
 import TimeField from "./TimeField";
 import Title from "./Title";
 
-let templateList = [
-  { id: "A", displayName: "在宅" ,timeList:[{startHour:8, startMinute:0, endHour:17, endMinute:0, style:"在宅"}]},
-  { id: "B", displayName: "在社" ,timeList:[{startHour:8, startMinute:30, endHour:17, endMinute:30, style:"在社"}]},
-  { id: "C", displayName: "在社→在宅" ,timeList:[{startHour:8, startMinute:0, endHour:12, endMinute:0, style:"在社"},{startHour:13, startMinute:0, endHour:17, endMinute:0, style:"在宅"}]},
-  { id: "D", displayName: "出張" ,timeList:[{startHour:9, startMinute:0, endHour:18, endMinute:0, style:"在社"}]},
-];
-
-const InputArea = ({ kintaiList, setKintaiList }) => {
-  const [date, setDate] = useState(new Date());
-  const [currentTemplate, setCurrentTemplate] = useState("A");
+const InputArea = ({ date, dateList, setDateList, templateID, setTemplateID, templateList, setRegister }) => {
   const [note, setNote] = useState("");
-  const convertToDateList = (timeList) => timeList.map(timeAndStyle => {
-    const startDate = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDate(),
-      timeAndStyle.startHour,
-      timeAndStyle.startMinute
-    );
-    const endDate = new Date(
-      date.getFullYear(),
-      date.getMonth(),
-      date.getDate(),
-      timeAndStyle.endHour,
-      timeAndStyle.endMinute
-    );
-    return { startDate, endDate, style: timeAndStyle.style };
-  })
-  const [dateList, setDateList] = useState(convertToDateList(templateList[0].timeList));
-  const [workTime, setWorkTime] = useState(0);
-  const [overtime, setOvertime] = useState(1.5);
-  
-  useEffect(() => {
-    const template = templateList.find(el => el.id === currentTemplate);
-    setDateList(convertToDateList(template.timeList));
-  },[currentTemplate]);
 
   return (
     <div className="inputArea">
       <Title date={date} />
       <Template
-        currentTemplate={currentTemplate}
-        setCurrentTemplate={setCurrentTemplate}
+        currentTemplate={templateID}
+        setCurrentTemplate={setTemplateID}
         templateList={templateList}/>
       {dateList.map((_, index) => 
         <TimeField
@@ -56,8 +22,6 @@ const InputArea = ({ kintaiList, setKintaiList }) => {
           dateList={dateList}
           setDateList={setDateList}
           index={index}
-          workTime={workTime}
-          setWorkTime={setWorkTime}
         />)
       }
       <Memo note={note} setNote={setNote} />
@@ -65,12 +29,7 @@ const InputArea = ({ kintaiList, setKintaiList }) => {
         dateList={dateList}
       />
       <Register
-        setKintaiList={setKintaiList}
-        date={date}
-        dateList={dateList}
-        note={note}
-        workTime={workTime}
-        overtime={overtime}
+        setRegister={setRegister}
       />
     </div>
   )

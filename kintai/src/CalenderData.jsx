@@ -46,7 +46,7 @@ const CalendarData = (props) => {
   });
 
   const events = defaltEvents.concat(workingResult.concat(dayOffEvents));
-  console.log(events);
+//  console.log(events);
 
   // const unSelect = (info) => {
   //   if (selectedDayEL) {
@@ -58,7 +58,7 @@ const CalendarData = (props) => {
   // };
 
   const selectDate = (info) => {
-    alert("Clicked on: " + info.date);
+//    alert("Clicked on: " + info.date);
     setSelectedDate(info.date);
     // info.dayEl.style.borderColor = "red";
     // info.dayEl.style.borderWidth = "5px";

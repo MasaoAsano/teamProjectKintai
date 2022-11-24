@@ -1,8 +1,8 @@
 import "../styles/register.css"
-const Register = ({ setKintaiList, date, timeList, note }) => {
+const Register = ({ setRegister }) => {
 
   const buttonClicked = () => {
-    console.log(date, timeList, note);
+    setRegister(true);
   };
 
   return (
