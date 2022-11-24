@@ -78,6 +78,7 @@ function App() {
   
   return (
     <div className="App">
+      <h1 className="head">シン・勤怠入力システム</h1>
       <CalenderData
         workResults={workResults}
         selectedDate={selectedDate}

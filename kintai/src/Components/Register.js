@@ -7,7 +7,7 @@ const Register = ({ setRegister }) => {
 
   return (
     <div className="register">
-      <button onClick={buttonClicked}>登録</button>
+      <button className="button" onClick={buttonClicked}>登録</button>
     </div>
   )
 };

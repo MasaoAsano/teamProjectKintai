@@ -65,6 +65,7 @@ const CalendarData = (props) => {
   };
 
   return (
+    <div className="calenderData">
     <FullCalendar
       plugins={[dayGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"
@@ -74,6 +75,7 @@ const CalendarData = (props) => {
       // unselect={unSelect}
       selectable={true}
     />
+    </div>
   );
 };
 export default CalendarData;
