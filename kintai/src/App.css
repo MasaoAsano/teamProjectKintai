@@ -1,73 +1,75 @@
+/* シン・勤怠入力システム*/
 .head{
   background-color: blue;
   color: white;
-  font-size: medium;
-  text-align:center
+  font-size: 150%;
+  font-family: "メイリオ" ;
+  width: 100%;
+  margin: 0px;
+  text-align:center;
+  position: fixed;
 }
-
-
-.App {
-
-}
-
+/*カレンダー*/
 .calenderData {
   float: left;
-  width: 60%;
+  width: 55%;
   height: 50%;
-
+  margin-left: 2%;
+  margin-top: 5%;
+  position: fixed;
 }
 
+/* 入力表示 */
 .inputArea {
-  /* float: right; */
+  float: right;
+  margin-top: 36px;
+  width: 35%;
+  height: 100%;
+  margin-right: 1%;
+  background: #e4fcff;/*背景色*/
+  
 }
 
+/* 11月24日の勤怠入力*/
+.title {
+  font-size: 80%;
+  background-color: aqua;
+  position: fixed;
+  width:100%;
+  /* height: 10%; */
+  /* margin: 0px 0px 0px 0px; */
+  /* padding: 0px 0px 0px 0px; */
+}
 
+.title h1{
+  margin: 0px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+}
 
+.template select{
+  margin-top: 12%;
+  font-size: 100%;
+  background-color: azure;
+}
 
-.button{
- font-size: 100%;
- width: 20%;
+.register button{
+ font-size: 200%;
+ width: 40%;
  height:10%;
- background: red;
+ border-radius: 10px;
+ background: rgb(248, 138, 138);
 }
 
-
-/* //////////////////// */
-/* .App {
-  text-align: center;
+.register button:hover {
+  cursor: pointer;
+  background-color: red;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.memo{
+  color: darkgray;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.timecomment{
+  color: darkgray;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-} */

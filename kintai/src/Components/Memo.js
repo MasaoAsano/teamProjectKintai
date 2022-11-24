@@ -1,6 +1,6 @@
 const Memo = ({ memo,func }) => {
   return (
-    <div>
+    <div className="memo">
       <p>メモ欄</p>
       <input
       type="text"
