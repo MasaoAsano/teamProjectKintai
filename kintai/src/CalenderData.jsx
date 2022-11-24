@@ -1,11 +1,15 @@
 import React, { useCallback, useState, useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import { Calendar } from "@fullcalendar/core";
 
 const CalendarData = (props) => {
+  const { workResults, selectedDate, setSelectedDate } = props;
+
   const noWorkingDay = [
-    "2022-11-03",
-    "2022-11-05",
+    "20221103",
+    "20221105",
     "2022-11-06",
     "2022-11-12",
     "2022-11-13",
@@ -15,6 +19,9 @@ const CalendarData = (props) => {
     "2022-11-26",
     "2022-11-27",
   ];
+
+  const dayOff = ["20221124"];
+
   const defaltEvents = noWorkingDay.map((x) => {
     return {
       start: x,
@@ -22,30 +29,32 @@ const CalendarData = (props) => {
     };
   });
 
-  const workingDay = [
-    ["2022-11-01", 9],
-    ["2022-11-02", 8],
-    ["2022-11-04", 10],
-  ];
-
-  const workingResult = workingDay.map((x) => {
+  const dayOffEvents = dayOff.map((x) => {
     return {
-      title: x[1] + "時間",
-      start: x[0],
-      backgroundColor: "red",
+      title: "年休",
+      start: x,
+      backgroundColor: "gray",
     };
   });
 
-  console.log(workingResult);
-  const events = defaltEvents.concat(workingResult);
+  const date = new Date();
+
+  const workingResult = workResults.map((x) => {
+    return {
+      title: x.workingTime + "時間",
+      start: x.date,
+      backgroundColor: "brue",
+    };
+  });
+
+  const events = defaltEvents.concat(workingResult.concat(dayOffEvents));
   console.log(events);
 
   return (
     <FullCalendar
-      plugins={[dayGridPlugin]}
+      plugins={[dayGridPlugin, interactionPlugin]}
       initialView="dayGridMonth"
       locale="ja" // 日本語化
-      // calender={{event:events1,eventcolor:blue},{event:events2, eventColor:red}}
       events={
         events
         // {
@@ -68,6 +77,13 @@ const CalendarData = (props) => {
         // },
         // eventColor:
       }
+      dateClick={(info) => {
+        alert("Clicked on: " + info.dateStr);
+        alert("Coordinates: " + info.jsEvent.pageX + "," + info.jsEvent.pageY);
+        alert("Current view: " + info.view.type);
+        // change the day's background color just for fun
+        info.dayEl.style.backgroundColor = "red";
+      }}
     />
   );
 };
