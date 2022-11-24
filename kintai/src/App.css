@@ -1,4 +1,39 @@
+.head{
+  background-color: blue;
+  color: white;
+  font-size: medium;
+  text-align:center
+}
+
+
 .App {
+
+}
+
+.calenderData {
+  float: left;
+  width: 60%;
+  height: 50%;
+
+}
+
+.inputArea {
+  /* float: right; */
+}
+
+
+
+
+.button{
+ font-size: 100%;
+ width: 20%;
+ height:10%;
+ background: red;
+}
+
+
+/* //////////////////// */
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +70,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

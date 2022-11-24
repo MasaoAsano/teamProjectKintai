@@ -22,8 +22,8 @@ const InputArea = (props) => {
     setCurrentTimeList(template.timeList);
   },[currentTemplate])
   
-  return (
-    <div className="inputArea">
+  return (<div className="inputArea">
+    
       <Title date={date} />
       <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} templateList={templateList}/>
       {currentTimeList.map(timesAndStyle => <TimeField key={Math.random()} date={date} timesAndStyle={timesAndStyle} />)}
