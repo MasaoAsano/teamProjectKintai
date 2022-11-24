@@ -1,19 +1,16 @@
-const Memo = ({ memo,func }) => {
+const Memo = ({ note, setNote, dateList }) => {
+  const atHome = dateList.find(dateStyle => dateStyle.style === "在宅");
+  const defaultNote = note !== "" ? note : atHome ? "在宅勤務" : "";
   return (
     <div>
-      <p>メモ欄</p>
       <input
-      type="text"
-      onChange={(e) => {
-        func=(e.target.value)
-        console.log('func',func);
-        console.log('memo',memo);
-      }}
+        type="text"
+        placeholder="メモを入力"
+        value={defaultNote}
+        onChange={(e) => { setNote(e.currentTarget.value) }}
       />
-      <p>memo{func}</p>
-      
     </div>
-  )
+  );
 };
 
 export default Memo;

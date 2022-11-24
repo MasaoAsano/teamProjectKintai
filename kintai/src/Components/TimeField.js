@@ -1,30 +1,24 @@
+import { useEffect, useState } from "react";
 import "../styles/timeField.css";
 import SelectorTitle from "./SelectorTitle";
 import TimeInput from "./TimeInput";
 import WorkStyleSelector from "./WorkstyleSelector";
 
-const TimeField = ({ date, timesAndStyle }) => {
-  const startDate = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    date.getDate(),
-    timesAndStyle.startHour,
-    timesAndStyle.startMinute
-  );
-  const endDate = new Date(
-    date.getFullYear(),
-    date.getMonth(),
-    date.getDate(),
-    timesAndStyle.endHour,
-    timesAndStyle.endMinute
-  );
-
+const TimeField = ({ dateList, setDateList, index }) => {
   return (
     <div className="timeField">
       <div>
         <SelectorTitle />
-        <WorkStyleSelector selected={timesAndStyle.style} />
-        <TimeInput startDate={startDate} endDate={endDate} />
+        <WorkStyleSelector
+          dateList={dateList}
+          setDateList={setDateList}
+          index={index}
+        />
+        <TimeInput
+          dateList={dateList}
+          setDateList={setDateList}
+          index={index}
+        />
       </div>
     </div>
   );
