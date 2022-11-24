@@ -1,0 +1,138 @@
+.timeField {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 30px;
+}
+
+.selectorTitle {
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.selectorTitle button {
+  display: inline-block;
+  margin-right: 10px;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  font-weight: bolder;
+}
+
+.selectorTitle h2 {
+  display: inline-block;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.workstyleSelector {
+  margin-bottom: 18px;
+}
+
+.workstyleSelector label {
+  margin-right: 12px;
+}
+
+/* time input */
+.timeInputField {
+  margin-left: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.timeInputField p {
+  font-size: 60px;
+  font-weight: 300;
+  margin: 0;
+  transform: rotate(90deg);
+}
+
+.timeInput {
+  position: relative;
+}
+
+.timeInput input {
+  font-size: 50px;
+  width: 160px;
+  height: 55px;
+  text-align: center;
+  padding: 20px;
+}
+
+.timeInput input:placeholder-shown {
+  font-size: 30px;
+}
+
+.selectionTable {
+  width: 220px;
+  height: 770px;
+  font-size: 40px;
+  position: absolute;
+  top: -300px;
+  left: 200px;
+
+  margin: 1.5em 0 1.5em 15px;
+  color: #555;
+  background: #FFF;
+  border: solid 3px #555;
+}
+
+.selectionTable:before {
+  content: "";
+  position: absolute;
+  top: 38%;
+  left: -24px;
+  margin-top: -12px;
+  border: 12px solid transparent;
+  border-right: 12px solid #FFF;
+  z-index: 2;
+}
+
+.selectionTable:after {
+  content: "";
+  position: absolute;
+  top: 38%;
+  left: -30px;
+  margin-top: -14px;
+  border: 14px solid transparent;
+  border-right: 14px solid #555;
+  z-index: 1;
+}
+
+.scrollView {
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  top: 0;
+  left: 0;
+
+  width: 220px;
+  height: 770px;
+
+  color: #555;
+  background: #FFF;
+}
+
+.scrollView div {
+  width: 70%;
+  text-align: center;
+}
+
+.scrollView div:hover {
+  color: black;
+  background-color: rgb(195, 254, 254);
+  cursor: pointer;
+}
+
+hr {
+  width: 70%;
+  margin: 3px;
+}
