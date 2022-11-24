@@ -41,7 +41,7 @@ const TimeInput = ({ dateList, setDateList, index }) => {
 
     const hour = base.slice(0, 2);
     const minute = base.slice(-2);
-    const date = dateList[index];
+    const date = dateList[index].startDate;
     const enteredDate = new Date(
       date.getFullYear(),
       date.getMonth(),

@@ -63,8 +63,6 @@ const InputArea = ({ kintaiList, setKintaiList }) => {
       <Memo note={note} setNote={setNote} />
       <TimeComment
         dateList={dateList}
-        setWorkTime={setWorkTime}
-        setOvertime={setOvertime}
       />
       <Register
         setKintaiList={setKintaiList}
