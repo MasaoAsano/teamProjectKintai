@@ -1,12 +1,9 @@
 import { useEffect, useRef } from "react";
 
-/**
- * SelectionTable 時刻選択肢一覧
- * @param { Date } Object.defaultDate 一覧の中心に配置する時刻
- * @param { function } Object.setTime 時刻を設定する関数
- * @returns Reactコンポーネント
- */
-const SelectionTable = ({ defaultDate, setTime }) => {
+//const SelectionTable = ({ defaultDate, setTime }) => {
+const SelectionTable = ({ dateList, setDateList, index, type }) => {
+
+  const defaultDate = dateList[index][type];
   const ref = useRef(null);
   const timeList = [];
   let target = 2;
@@ -35,7 +32,24 @@ const SelectionTable = ({ defaultDate, setTime }) => {
       hour,
       minute
     );
-    setTime(selectedDate)
+//    setTime(selectedDate)
+    let newDate;
+    if (type === "startDate") {
+      newDate = {
+        startDate: selectedDate,
+        endDate: dateList[index].endDate,
+        style: dateList[index].style
+      };
+    } else {
+      newDate = {
+        startDate: dateList[index].startDate,
+        endDate: selectedDate,
+        style: dateList[index].style
+      };
+    }
+    const newList = dateList.slice();
+    newList.splice(index, 1, newDate);
+    setDateList(newList);
   }
 
   useEffect(() => {

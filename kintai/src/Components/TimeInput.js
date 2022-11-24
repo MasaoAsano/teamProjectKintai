@@ -1,21 +1,21 @@
 import { useEffect, useState } from "react";
 import SelectionTable from "./SelectionTable";
 
-const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
+// const TimeInput = ({ startDate, setStartDate, endDate, setEndDate }) => {
+const TimeInput = ({ dateList, setDateList, index }) => {
   const createDisplayTime = (date) => date.getHours() + ":" + String(date.getMinutes()).padStart(2, "0");
-  const [startTime, setStartTime] = useState(startDate);
-  const [displayTimeStart, setDisplayTimeStart] = useState(createDisplayTime(startTime));
-  const [endTime, setEndTime] = useState(endDate);
-  const [displayTimeEnd, setDisplayTimeEnd] = useState(createDisplayTime(endTime));
+  const [displayTimeStart, setDisplayTimeStart] = useState(createDisplayTime(dateList[index].startDate));
+  const [displayTimeEnd, setDisplayTimeEnd] = useState(createDisplayTime(dateList[index].endDate));
   const [focusOnStart, setFocusOnStart] = useState(false);
   const [focusOnEnd, setFocusOnEnd] = useState(false);
 
-  useEffect(() => {
-    setDisplayTimeStart(createDisplayTime(startTime));
-  }, [startTime])
-  useEffect(() => {
-    setDisplayTimeEnd(createDisplayTime(endTime));
-  }, [endTime])
+  // useEffect(() => {
+  //   setDisplayTimeStart(createDisplayTime(startDate));
+  // }, [startDate])
+
+  // useEffect(() => {
+  //   setDisplayTimeEnd(createDisplayTime(endDate));
+  // }, [endDate])
 
   const timeInputted = (e) => {
     if (e.target.placeholder === "開始時刻") {
@@ -28,8 +28,8 @@ const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
   const setEnteredTime = (value, inStart) => {
     let re = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):?(0[0-9]|[1-5][0-9])$/;
     if (!re.test(value)) {
-      setDisplayTimeStart(createDisplayTime(startTime));
-      setDisplayTimeEnd(createDisplayTime(endTime));
+      setDisplayTimeStart(createDisplayTime(dateList[index].startDate));
+      setDisplayTimeEnd(createDisplayTime(dateList[index].endDate));
       return;
     }
     
@@ -41,18 +41,34 @@ const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
 
     const hour = base.slice(0, 2);
     const minute = base.slice(-2);
+    const date = dateList[index];
     const enteredDate = new Date(
-      startTime.getFullYear(),
-      startTime.getMonth(),
-      startTime.getDate(),
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
       hour,
       minute
     );
+
+    let newDate;
     if (inStart) {
-      setStartTime(enteredDate);
+      newDate = {
+        startDate: enteredDate,
+        endDate: dateList[index].endDate,
+        style: dateList[index].style
+      };
+      //      setStartDate(enteredDate);
     } else {
-      setEndTime(enteredDate);
+      newDate = {
+        startDate: dateList[index].startDate,
+        endDate: enteredDate,
+        style: dateList[index].style
+      };
+//      setEndDate(enteredDate);
     }
+    const newList = dateList.slice();
+    newList.splice(index, 1, newDate);
+    setDateList(newList);
   }
 
   const focusChanged = (inStart) => {
@@ -88,7 +104,8 @@ const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
           onChange={timeInputted}
           onKeyDown={onKeyDown(true)}
         />
-        {focusOnStart ? <SelectionTable defaultDate={startTime} setTime={setStartTime} /> : <></>}
+        {focusOnStart ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="startDate" /> : <></>}
+        {/* {focusOnStart ? <SelectionTable defaultDate={startDate} setTime={setStartDate} /> : <></>} */}
       </div>
       <p>~</p>
       <div className="timeInput" onFocus={()=>{ setFocusOnEnd(true) }} onBlur={focusChanged(false)}>
@@ -98,8 +115,9 @@ const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
           value={displayTimeEnd} 
           onChange={timeInputted} 
           onKeyDown={onKeyDown(false)}
-        />
-        {focusOnEnd ? <SelectionTable defaultDate={endTime} setTime={setEndTime}/> : <></>}
+          />
+        {focusOnEnd ? <SelectionTable dateList={dateList} setDateList={setDateList} index={index} type="endDate" /> : <></>}
+        {/* {focusOnEnd ? <SelectionTable defaultDate={endDate} setTime={setEndDate}/> : <></>} */}
       </div>
     </div>
   )

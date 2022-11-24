@@ -13,41 +13,66 @@ let templateList = [
   { id: "D", displayName: "出張" ,timeList:[{startHour:9, startMinute:0, endHour:18, endMinute:0, style:"在社"}]},
 ];
 
-const InputArea = ({ setKintaiList }) => {
+const InputArea = ({ kintaiList, setKintaiList }) => {
   const [date, setDate] = useState(new Date());
   const [currentTemplate, setCurrentTemplate] = useState("A");
-  const [note, setNote] = useState("メモ");
-  const [timeList, setTimeList] = useState(templateList[0].timeList);
-  useEffect(() => {
-    const template = templateList.find(el => el.id === currentTemplate);
-    setTimeList(template.timeList);
-  },[currentTemplate]);
+  const [note, setNote] = useState("");
+  const convertToDateList = (timeList) => timeList.map(timeAndStyle => {
+    const startDate = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      timeAndStyle.startHour,
+      timeAndStyle.startMinute
+    );
+    const endDate = new Date(
+      date.getFullYear(),
+      date.getMonth(),
+      date.getDate(),
+      timeAndStyle.endHour,
+      timeAndStyle.endMinute
+    );
+    return { startDate, endDate, style: timeAndStyle.style };
+  })
+  const [dateList, setDateList] = useState(convertToDateList(templateList[0].timeList));
+//  let timeList = templateList[0].timeList.slice();
   const [workTime, setWorkTime] = useState(0);
   const [overtime, setOvertime] = useState(1.5);
   
+  useEffect(() => {
+    const template = templateList.find(el => el.id === currentTemplate);
+//    setTimeList(template.timeList);
+    setDateList(convertToDateList(template.timeList));
+  },[currentTemplate]);
+
   return (
     <div className="inputArea">
       <Title date={date} />
-      <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} templateList={templateList}/>
-      {timeList.map(timesAndStyle => 
+      <Template
+        currentTemplate={currentTemplate}
+        setCurrentTemplate={setCurrentTemplate}
+        templateList={templateList}/>
+      {dateList.map((_, index) => 
         <TimeField
-          key={Math.random()} 
-          date={date} 
-          timesAndStyle={timesAndStyle}
+          key={Math.random()}
+          date={date}
+          dateList={dateList}
+          setDateList={setDateList}
+          index={index}
           workTime={workTime}
           setWorkTime={setWorkTime}
         />)
       }
       <Memo note={note} setNote={setNote} />
       <TimeComment
-        timeList={timeList}
-        setWorkingTime={setWorkTime}
+        dateList={dateList}
+        setWorkTime={setWorkTime}
         setOvertime={setOvertime}
       />
       <Register
         setKintaiList={setKintaiList}
         date={date}
-        timeList={timeList}
+        dateList={dateList}
         note={note}
         workTime={workTime}
         overtime={overtime}

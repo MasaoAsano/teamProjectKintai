@@ -1,4 +1,4 @@
-const WorkstyleSelector = ({ selected }) => {
+const WorkstyleSelector = ({ selected, setStyle }) => {
   const uniqueName = "workstyle" + Math.random();
   return (
     <div className="workstyleSelector">
@@ -11,6 +11,7 @@ const WorkstyleSelector = ({ selected }) => {
             name={uniqueName}
             value={style}
             defaultChecked={style === selected}
+            onChange={(e)=>console.log(e)}
           />
           <label key={style + "label"} htmlFor={style + uniqueName}>
             {style}
