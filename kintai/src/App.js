@@ -2,21 +2,7 @@ import "./App.css";
 import CalenderData from "./CalenderData";
 import InputArea from "./Components/InputArea";
 import React, { useEffect, useState } from "react";
-
-const kintaiList = [
-  {
-    date: new Date("2022-11-01"),
-    timeRecords: [
-      {
-        startDate: new Date("2022-11-01 8:00:00"),
-        endDate: new Date("2022-11-01 19:00:00"),
-        style: "在宅"
-      },
-    ],
-    note: "aiueo",
-    approved: true
-  },
-];
+import kintaiList from "./InitialData";
 
 const templateList = [
   { id: "A", displayName: "在宅" ,timeList:[{startHour:8, startMinute:0, endHour:17, endMinute:0, style:"在宅"}]},
