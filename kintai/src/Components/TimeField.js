@@ -3,7 +3,7 @@ import SelectorTitle from "./SelectorTitle";
 import TimeInput from "./TimeInput";
 import WorkStyleSelector from "./WorkstyleSelector";
 
-const TimeField = ({ date, timesAndStyle }) => {
+const TimeField = ({ date, timesAndStyle, workTime, setWorkTime }) => {
   const startDate = new Date(
     date.getFullYear(),
     date.getMonth(),
@@ -24,7 +24,7 @@ const TimeField = ({ date, timesAndStyle }) => {
       <div>
         <SelectorTitle />
         <WorkStyleSelector selected={timesAndStyle.style} />
-        <TimeInput startDate={startDate} endDate={endDate} />
+        <TimeInput startDate={startDate} endDate={endDate} workTime={workTime} setWorkTime={setWorkTime} />
       </div>
     </div>
   );

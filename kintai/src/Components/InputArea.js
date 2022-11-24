@@ -22,18 +22,26 @@ const InputArea = ({ setKintaiList }) => {
     const template = templateList.find(el => el.id === currentTemplate);
     setTimeList(template.timeList);
   },[currentTemplate]);
-  const [workingTime, setWorkingTime] = useState(9.5);
+  const [workTime, setWorkTime] = useState(0);
   const [overtime, setOvertime] = useState(1.5);
   
   return (
     <div className="inputArea">
       <Title date={date} />
       <Template currentTemplate={currentTemplate} setCurrentTemplate={setCurrentTemplate} templateList={templateList}/>
-      {timeList.map(timesAndStyle => <TimeField key={Math.random()} date={date} timesAndStyle={timesAndStyle} />)}
+      {timeList.map(timesAndStyle => 
+        <TimeField
+          key={Math.random()} 
+          date={date} 
+          timesAndStyle={timesAndStyle}
+          workTime={workTime}
+          setWorkTime={setWorkTime}
+        />)
+      }
       <Memo note={note} setNote={setNote} />
       <TimeComment
         timeList={timeList}
-        setWorkingTime={setWorkingTime}
+        setWorkingTime={setWorkTime}
         setOvertime={setOvertime}
       />
       <Register
@@ -41,7 +49,7 @@ const InputArea = ({ setKintaiList }) => {
         date={date}
         timeList={timeList}
         note={note}
-        workingTime={workingTime}
+        workTime={workTime}
         overtime={overtime}
       />
     </div>

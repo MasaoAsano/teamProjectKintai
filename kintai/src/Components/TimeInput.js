@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SelectionTable from "./SelectionTable";
 
-const TimeInput = ({ startDate, endDate }) => {
+const TimeInput = ({ startDate, endDate, workTime, setWorkTime }) => {
   const createDisplayTime = (date) => date.getHours() + ":" + String(date.getMinutes()).padStart(2, "0");
   const [startTime, setStartTime] = useState(startDate);
   const [displayTimeStart, setDisplayTimeStart] = useState(createDisplayTime(startTime));
