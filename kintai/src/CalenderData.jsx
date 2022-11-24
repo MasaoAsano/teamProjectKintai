@@ -41,6 +41,7 @@ const CalendarData = (props) => {
   console.log(events);
 
   return (
+    <div className="calenderData">
     <FullCalendar
       plugins={[dayGridPlugin]}
       initialView="dayGridMonth"
@@ -69,6 +70,7 @@ const CalendarData = (props) => {
         // eventColor:
       }
     />
+    </div>
   );
 };
 export default CalendarData;
