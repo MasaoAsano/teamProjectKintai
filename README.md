@@ -4,9 +4,8 @@
 起動するとき　npm run start  (ターミナルでcd でkintaiのフォルダに移動してから) -->
 
 
-# Name（リポジトリ/プロジェクト/OSSなどの名前）
+# Project
  
-teamProjectKintai
 勤怠管理システムの改善案試作 
  
 # DEMO
