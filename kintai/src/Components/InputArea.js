@@ -35,13 +35,11 @@ const InputArea = ({ kintaiList, setKintaiList }) => {
     return { startDate, endDate, style: timeAndStyle.style };
   })
   const [dateList, setDateList] = useState(convertToDateList(templateList[0].timeList));
-//  let timeList = templateList[0].timeList.slice();
   const [workTime, setWorkTime] = useState(0);
   const [overtime, setOvertime] = useState(1.5);
   
   useEffect(() => {
     const template = templateList.find(el => el.id === currentTemplate);
-//    setTimeList(template.timeList);
     setDateList(convertToDateList(template.timeList));
   },[currentTemplate]);
 
@@ -55,7 +53,6 @@ const InputArea = ({ kintaiList, setKintaiList }) => {
       {dateList.map((_, index) => 
         <TimeField
           key={Math.random()}
-          date={date}
           dateList={dateList}
           setDateList={setDateList}
           index={index}
