@@ -38,14 +38,30 @@ const CalendarData = (props) => {
   });
 
   const workingResult = workResults.map((x) => {
+    const color = x.approved ? "" : "#DD99BA";
     return {
-      title: "残業" + x.workingTime + "時間",
+      title: "勤務" + x.workingTime + "時間",
       start: x.date,
-      backgroundColor: "brue",
+      backgroundColor: color,
+      allDay: true,
+      borderColor: color
+    };
+  });
+  
+  const overResult = workResults.filter(x => {
+    return x.overTime !== "-0:00" || x.overTime === "0:00";
+  }).map((x) => {
+    const color = x.approved ? "" : "#DD99BA";
+    return {
+      title: "残業" + x.overTime + "時間",
+      start: x.date,
+      backgroundColor: color,
+      borderColor: color,
+      allDay: true,
     };
   });
 
-  const events = defaltEvents.concat(workingResult.concat(dayOffEvents));
+  const events = defaltEvents.concat(workingResult.concat(dayOffEvents.concat(overResult)));
 //  console.log(events);
 
   // const unSelect = (info) => {

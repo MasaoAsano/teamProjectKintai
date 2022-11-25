@@ -7,6 +7,7 @@
 }
 
 .selectorTitle {
+  margin-top: 20px;
   margin-bottom: 5px;
   display: flex;
   flex-direction: row;
@@ -26,6 +27,11 @@
   display: inline-block;
   margin-top: 0;
   margin-bottom: 0;
+}
+
+.template {
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 
 .workstyleSelector {
@@ -87,6 +93,8 @@
   color: #555;
   background: #FFF;
   border: solid 3px #555;
+
+  z-index: 1000;
 }
 
 .selectionTable:before {
@@ -121,6 +129,7 @@
   position: relative;
   top: 0;
   left: 0;
+  z-index: 1000;
 
   width: 220px;
   height: 720px;
@@ -132,6 +141,9 @@
 .scrollView div {
   width: 70%;
   text-align: center;
+
+  position: relative;
+  z-index: 1001;
 }
 
 .scrollView div:hover {
@@ -149,6 +161,9 @@
   font-size: large;
   font-weight: bolder;
   background-color: #FFF;
+
+  position: relative;
+  z-index: 1002;
 }
 
 .unit div {
