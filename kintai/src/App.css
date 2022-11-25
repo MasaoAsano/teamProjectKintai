@@ -8,6 +8,7 @@
   margin: 0px;
   text-align:center;
   position: fixed;
+  z-index: 200;
 }
 /*カレンダー*/
 .calenderData {
@@ -23,19 +24,22 @@
 .inputArea {
   float: right;
   margin-top: 36px;
-  width: 35%;
+  width: 37%;
   height: 100%;
   margin-right: 1%;
   background: #e4fcff;/*背景色*/
-  
+  padding-left: 50px;
+  position: relative;
+  z-index: 100;
 }
 
 /* 11月24日の勤怠入力*/
 .title {
   font-size: 80%;
-  background-color: rgba(139, 255, 255, 0.998);
+  background-color: #e4fcff;
   position: fixed;
   width:100%;
+  z-index: 100;
   /* height: 10%; */
   /* margin: 0px 0px 0px 0px; */
   /* padding: 0px 0px 0px 0px; */
@@ -54,10 +58,21 @@
 
 .memo{
   color: darkgray;
+  margin-top: 30px;
+}
+
+.memo input {
+  font-size: larger;
 }
 
 .timecomment{
   color: darkgray;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.timecomment p {
+  margin: 0;
 }
 
 .register button{
@@ -66,6 +81,7 @@
   height:10%;
   border-radius: 10px;
   margin-left: 28px;
+  margin-bottom: 30px;
   background: rgb(248, 138, 138);
  }
  
