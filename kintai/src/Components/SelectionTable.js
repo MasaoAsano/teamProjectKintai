@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-//const SelectionTable = ({ defaultDate, setTime }) => {
 const SelectionTable = ({ dateList, setDateList, index, type, interval, setInterval }) => {
-
   const defaultDate = dateList[index][type];
   const ref = useRef(null);
   const timeList = [];
@@ -72,9 +70,9 @@ const SelectionTable = ({ dateList, setDateList, index, type, interval, setInter
   return (
     <div className="selectionTable" tabIndex={-1} >
       <div className="unit">
-        <div onClick={clicked10}>10分</div>
-        <div onClick={clicked5}>５分</div>
-        <div onClick={clicked1}>１分</div>
+        <div className={interval == 10 ? "black" : ""} onClick={clicked10}>10分</div>
+        <div className={interval == 5 ? "black" : ""} onClick={clicked5}>５分</div>
+        <div className={interval == 1 ? "black" : ""} onClick={clicked1}>１分</div>
       </div>
       <div className="scrollView">
         {timeList}
