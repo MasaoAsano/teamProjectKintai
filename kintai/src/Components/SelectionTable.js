@@ -7,7 +7,7 @@ const SelectionTable = ({ dateList, setDateList, index, type, interval, setInter
   const ref = useRef(null);
   const timeList = [];
   let target = 2;
-  for (let hour = 6; hour < 24; hour++) {
+  for (let hour = 0; hour < 24; hour++) {
     for (let minute = 0; minute < 60; minute += interval) {
       const time = hour + ":" + String(minute).padStart(2, "0");
       target++;
