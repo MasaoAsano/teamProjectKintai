@@ -15,7 +15,7 @@ const TimeComment = ({ dateList }) => {
   const sign = overTime > 0 ? "" : "-";
 
   return (
-    <div>
+    <div className="timecomment">
       <p>勤務時間 {workHour + ":" + String(workMinute).padStart(2, "0")}</p>
       <p>残業時間 {sign + Math.abs(overHour) + ":" + String(Math.abs(overMinute)).padStart(2, "0")}</p>
     </div>

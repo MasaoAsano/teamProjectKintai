@@ -3,7 +3,7 @@
 
 const Template = ({ currentTemplate, setCurrentTemplate, templateList }) => {
   return (
-    <div className="">
+    <div className="template">
       <select
         onChange={(e) => {
           let style = e.target.value;

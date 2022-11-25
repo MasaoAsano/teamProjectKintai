@@ -1,9 +1,5 @@
 # teamProjectKintai
 
-<!-- 樋口メモ（後で消します）
-起動するとき　npm run start  (ターミナルでcd でkintaiのフォルダに移動してから) -->
-
-
 # Project
  
 勤怠管理システムの改善案試作 
@@ -49,4 +45,3 @@ kazu006, Yusuke333, ejiritakeshi and MasaoAsano
 # License
  
 社内用
- 

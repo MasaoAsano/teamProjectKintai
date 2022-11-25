@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-top: 30px;
+  /* margin-top: 50px; */
+  width: 100%;
 }
 
 .selectorTitle {
@@ -61,10 +62,17 @@
   height: 55px;
   text-align: center;
   padding: 20px;
+  border-radius: 10px;/**/
+  background-color: greenyellow;/**/
 }
 
 .timeInput input:placeholder-shown {
   font-size: 30px;
+}
+
+.timeInput input:hover {
+  cursor: pointer;
+  background-color: rgb(64, 220, 30);
 }
 
 .selectionTable {
