@@ -29,11 +29,6 @@
   margin-bottom: 0;
 }
 
-.template {
-  margin-top: 20px;
-  margin-bottom: 30px;
-}
-
 .workstyleSelector {
   margin-bottom: 18px;
 }
@@ -44,7 +39,8 @@
 
 /* time input */
 .timeInputField {
-  margin-left: 28px;
+  margin-left: 0px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -52,9 +48,9 @@
 }
 
 .timeInputField p {
-  font-size: 60px;
+  font-size: 50px;
   font-weight: 300;
-  margin: 0;
+  margin: -10px;
   transform: rotate(90deg);
 }
 

@@ -30,7 +30,6 @@
   background: #e4fcff;/*背景色*/
   padding-left: 50px;
   position: relative;
-  z-index: 100;
 }
 
 /* 11月24日の勤怠入力*/
@@ -50,6 +49,11 @@
   padding: 0px 0px 0px 0px;
 }
 
+.template {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
 .template select{
   margin-top: 12%;
   font-size: 100%;
@@ -63,6 +67,7 @@
 
 .memo input {
   font-size: larger;
+  width: 50%;
 }
 
 .timecomment{
@@ -77,10 +82,10 @@
 
 .register button{
   font-size: 200%;
-  width: 32%;
-  height:10%;
+  width: 50%;
+  height:80px;
   border-radius: 10px;
-  margin-left: 28px;
+  margin-left: 0px;
   margin-bottom: 30px;
   background: rgb(248, 138, 138);
  }
