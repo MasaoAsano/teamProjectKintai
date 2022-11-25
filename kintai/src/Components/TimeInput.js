@@ -76,7 +76,7 @@ const TimeInput = ({ dateList, setDateList, index }) => {
   const onKeyDown = (inStart) => {
     return (e) => {
       if (e.nativeEvent.isComposing || e.key !== 'Enter') {
-        return
+        return;
       }
       e.preventDefault();
 
@@ -93,6 +93,7 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           value={displayTimeStart}
           onChange={timeInputted}
           onKeyDown={onKeyDown(true)}
+          tabIndex={index * 2 + 1}
         />
         {focusOnStart ? 
           <SelectionTable
@@ -113,6 +114,7 @@ const TimeInput = ({ dateList, setDateList, index }) => {
           value={displayTimeEnd} 
           onChange={timeInputted} 
           onKeyDown={onKeyDown(false)}
+          tabIndex={index * 2 + 2}
           />
         {focusOnEnd ?
           <SelectionTable
