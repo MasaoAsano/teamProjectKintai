@@ -181,18 +181,6 @@ const kintaiList = [
     note: "",
     approved: false
   },
-  {
-    date: new Date("2022-11-21"),
-    timeRecords: [
-      {
-        startDate: new Date("2022-11-21 8:00:00"),
-        endDate: new Date("2022-11-21 16:30:00"),
-        style: "在宅"
-      },
-    ],
-    note: "",
-    approved: false
-  },
 ];
 
 export default kintaiList;
