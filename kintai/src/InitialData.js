@@ -65,7 +65,7 @@ const kintaiList = [
     timeRecords: [
       {
         startDate: new Date("2022-11-09 8:00:00"),
-        endDate: new Date("2022-11-09 19:00:00"),
+        endDate: new Date("2022-11-09 17:00:00"),
         style: "在宅"
       },
     ],
@@ -145,7 +145,7 @@ const kintaiList = [
     timeRecords: [
       {
         startDate: new Date("2022-11-16 8:00:00"),
-        endDate: new Date("2022-11-16 19:00:00"),
+        endDate: new Date("2022-11-16 17:00:00"),
         style: "在宅"
       },
     ],

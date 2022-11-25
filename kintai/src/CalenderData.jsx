@@ -48,7 +48,9 @@ const CalendarData = (props) => {
     };
   });
   
-  const overResult = workResults.map((x) => {
+  const overResult = workResults.filter(x => {
+    return x.overTime !== "-0:00" || x.overTime === "0:00";
+  }).map((x) => {
     const color = x.approved ? "" : "#DD99BA";
     return {
       title: "残業" + x.overTime + "時間",
