@@ -22,6 +22,9 @@ function App() {
 
   useEffect(() => {
     const currentTemplate = templateList.find(template => template.id === templateID);
+    if (!currentTemplate) {
+      return;
+    }
     setDateList(convertToDateList(currentTemplate.timeList, selectedDate));
   }, [templateID]);
 
