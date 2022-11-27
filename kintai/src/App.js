@@ -12,25 +12,6 @@ const templateList = [
 ];
 
 function App() {
-
-  const initialWorkResults = [
-    {
-      date: "20221107",
-      workingTime: 2,
-      approved: true,
-    },
-    {
-      date: "20221108",
-      workingTime: 3,
-      approved: true,
-    },
-    {
-      date: "20221109",
-      workingTime: 4,
-      approved: false,
-    },
-  ];
-
   const initialDate = new Date();
   const [selectedDate, setSelectedDate] = useState(initialDate);
   const [workResults, setWorkResults] = useState(convertToWorkResults(kintaiList));
@@ -41,6 +22,9 @@ function App() {
 
   useEffect(() => {
     const currentTemplate = templateList.find(template => template.id === templateID);
+    if (!currentTemplate) {
+      return;
+    }
     setDateList(convertToDateList(currentTemplate.timeList, selectedDate));
   }, [templateID]);
 
@@ -58,6 +42,12 @@ function App() {
 
   useEffect(() => {
     if (selectedDate.getHours() !== 0 || selectedDate.getMinutes() !== 0) {
+      const newDate = new Date(selectedDate.getTime());
+      newDate.setHours(0);
+      newDate.setMinutes(0);
+      newDate.setSeconds(0);
+      newDate.setMilliseconds(0);
+      setSelectedDate(newDate);
       return;
     }
     const target = kintaiList.findIndex(kintai => kintai.date.getFullYear() === selectedDate.getFullYear() && kintai.date.getMonth() == selectedDate.getMonth() && kintai.date.getDate() === selectedDate.getDate());
