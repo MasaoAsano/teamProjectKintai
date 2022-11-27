@@ -62,22 +62,9 @@ const CalendarData = (props) => {
   });
 
   const events = defaltEvents.concat(workingResult.concat(dayOffEvents.concat(overResult)));
-//  console.log(events);
-
-  // const unSelect = (info) => {
-  //   if (selectedDayEL) {
-  //   console.log(info.jsEvent.target.style.borderColor);
-  //   info.jsEvent.target.style.borderColor = "yellow";
-  //   selectedDayEL.style.borderWidth = "0px";
-  //   selectedDayEL = undefined;
-  //   }
-  // };
 
   const selectDate = (info) => {
-//    alert("Clicked on: " + info.date);
     setSelectedDate(info.date);
-    // info.dayEl.style.borderColor = "red";
-    // info.dayEl.style.borderWidth = "5px";
   };
 
   return (
@@ -88,7 +75,6 @@ const CalendarData = (props) => {
       locale="ja"
       events={events}
       dateClick={selectDate}
-      // unselect={unSelect}
       selectable={true}
     />
     </div>
